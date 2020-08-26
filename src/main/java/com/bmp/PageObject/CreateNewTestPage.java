@@ -6,7 +6,7 @@ public class CreateNewTestPage {
 
 	private static final long GLOBALTIMEOUT = 10000;
 	AppLibrary appLibrary;
-	Integer randInt;
+	
 	public static String CreateTestButt = "id:btnCreateTest";
 	public static String UploadScriptsButt = "id:btnUploadFiles";
 	public static String FileInput = "xpath://input[@type='file']";
@@ -24,6 +24,7 @@ public class CreateNewTestPage {
 	public static String test = "class:name";
 	public static String testNameBlock = "id:testName";
 	public static String testNameinBlock = "";
+	public static String message="id:SuccessAlertMsg";
 
 	public CreateNewTestPage(AppLibrary appLibrary) {
 		this.appLibrary = appLibrary;
@@ -35,22 +36,22 @@ public class CreateNewTestPage {
 		appLibrary.clickElement(LoginPage.CreatNewTest);
 
 		appLibrary.findElement(FileInput)
-				.sendKeys("C:\\Users\\fidel\\Downloads\\PassedTestScripts\\Android\\SampleAndroid.zip");
-		AppLibrary.waitTillDataLoaded("//div[@title='SampleAndroid.zip']", "title", "SampleAndroid.zip");
+				.sendKeys("D:\\ls\\BMP\\BMP-Project\\Applications\\IOS\\Zencanna Distribution.app.zip");
+		AppLibrary.waitTillDataLoaded("//div[@title='Zencanna Distribution.app.zip']", "title", "Zencanna Distribution.app.zip");
 
 		appLibrary.findElement(FileInput).sendKeys(
-				"C:\\Users\\fidel\\Downloads\\PassedTestScripts\\Android\\BMT_MobileAutomation.jar");
+				"D:\\ls\\BMP\\BMP-Project\\Applications\\IOS\\BMT_MobileAutomation.jar");
 
 		AppLibrary.waitTillDataLoaded("//div[@title='BMT_MobileAutomation.jar']", "title",
 				"BMT_MobileAutomation.jar");
 
 		appLibrary.findElement(FileInput)
-				.sendKeys("C:\\Users\\fidel\\Downloads\\PassedTestScripts\\Android\\BMTTest19800gcPe9NVtXVNX.java");
-		AppLibrary.waitTillDataLoaded("//div[@title='BMTTest19800gcPe9NVtXVNX.java']", "title", "BMTTest19800gcPe9NVtXVNX.java");
+				.sendKeys("D:\\ls\\BMP\\BMP-Project\\Applications\\IOS\\BMTTest19800noAp3j7024ui.java");
+		AppLibrary.waitTillDataLoaded("//div[@title='BMTTest19800noAp3j7024ui.java']", "title", "BMTTest19800noAp3j7024ui.java");
 
 		appLibrary.findElement(FileInput)
-				.sendKeys("C:\\Users\\fidel\\Downloads\\PassedTestScripts\\Android\\BMTYaml19800jCgNd99huwwA.yml");
-		AppLibrary.waitTillDataLoaded("//div[@title='BMTYaml19800jCgNd99huwwA.yml']", "title", "BMTYaml19800jCgNd99huwwA.yml");
+				.sendKeys("D:\\ls\\BMP\\BMP-Project\\Applications\\IOS\\BMTYaml198007SZnhENLpQLM.yml");
+		AppLibrary.waitTillDataLoaded("//div[@title='BMTYaml198007SZnhENLpQLM.yml']", "title", "BMTYaml198007SZnhENLpQLM.yml");
 
 		appLibrary.waitTillElementLoaded(FileInput);
 
@@ -59,8 +60,10 @@ public class CreateNewTestPage {
 		
 		appLibrary.findElement(TestN).clear();
          appLibrary.enterInput(TestN, tName);
-         appLibrary.sleep(5000);
+        // appLibrary.sleep(5000);
          appLibrary.findElement(SaveTest).click();
+         //Verify Created Test
+         appLibrary.findElement(message);
 		//testName = appLibrary.findElement(TestN).getAttribute("value");
 
 		return new CreateNewTestPage(appLibrary);
