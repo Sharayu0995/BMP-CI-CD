@@ -60,7 +60,7 @@ public class CreateNewTestPage {
 		
 		appLibrary.findElement(TestN).clear();
          appLibrary.enterInput(TestN, tName);
-        // appLibrary.sleep(5000);
+        
          appLibrary.findElement(SaveTest).click();
          //Verify Created Test
          appLibrary.findElement(message);
