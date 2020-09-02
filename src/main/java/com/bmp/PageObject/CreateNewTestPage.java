@@ -4,7 +4,7 @@ import com.bmp.Library.AppLibrary;
 
 public class CreateNewTestPage {
 
-	private static final long GLOBALTIMEOUT = 10000;
+	//private static final long GLOBALTIMEOUT = 10000;
 	AppLibrary appLibrary;
 	
 	public static String CreateTestButt = "id:btnCreateTest";
@@ -25,6 +25,11 @@ public class CreateNewTestPage {
 	public static String testNameBlock = "id:testName";
 	public static String testNameinBlock = "";
 	public static String message="id:SuccessAlertMsg";
+	public static String scheduleTest="id:btnAddSchedule";
+	public static String frequencyWeekly="id:radio-item-weekly";
+	public static String frequencyMonthly="id:radio-item-monthly";
+	public static String checkBoxDay="xpath://input[@id='1'] ";
+	public static String saveButton="xpath://button[contains(text(),'Save')]";
 
 	public CreateNewTestPage(AppLibrary appLibrary) {
 		this.appLibrary = appLibrary;
@@ -86,5 +91,27 @@ public class CreateNewTestPage {
 
 		return new CreateNewTestPage(appLibrary);
 	}
-
+   
+	public CreateNewTestPage scheduleTestWeekly() throws Exception
+	{
+		appLibrary.clickElement(scheduleTest);
+		appLibrary.clickElement(frequencyWeekly);
+		appLibrary.clickElement(saveButton);
+		appLibrary.findElement(SaveTest).click();
+         //Verify Created Test
+         appLibrary.findElement(message);
+		return new CreateNewTestPage(appLibrary);
+	}
+	public CreateNewTestPage scheduleTestMonthly() throws Exception
+	{
+		appLibrary.clickElement(scheduleTest);
+		appLibrary.clickElement(frequencyMonthly);
+		appLibrary.clickElement(checkBoxDay);
+		appLibrary.clickElement(saveButton);
+		appLibrary.findElement(SaveTest).click();
+         //Verify Created Test
+         appLibrary.findElement(message);
+		return new CreateNewTestPage(appLibrary);
+		
+	}
 }
