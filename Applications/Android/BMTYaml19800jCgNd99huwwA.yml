@@ -1,0 +1,13 @@
+execution:
+- executor: selenium
+  runner: testng
+  concurrency: 1
+  ramp-up: 0m
+  hold-for: 0s
+  scenario: simple-android-test
+
+scenarios:
+  simple-android-test:
+      script: BMTTest19800gcPe9NVtXVNX.java
+      additional-classpath:
+      - BMT_MobileAutomation.jar

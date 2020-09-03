@@ -25,7 +25,7 @@ public class DeleteTest extends TestBase
 		appLibrary.launchApp();
 		
 		new LoginPage(appLibrary).login("qa638@mailinator.com","test12");
-		new DeleteTestPage(appLibrary).DeleteRandomTest();
-		new DeleteTestPage(appLibrary).searchDeleteRandomTestName(testName);
+		new DeleteTestPage(appLibrary).deleteTest();
+		new DeleteTestPage(appLibrary).verifyDeletedTest(testName);
 	}
 }

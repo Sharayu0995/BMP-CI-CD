@@ -26,7 +26,7 @@ public class SearchandDeleteTest extends TestBase
 		String myTestName="My Test" + AppLibrary.randIntDigits(0, 99);
         new LoginPage(appLibrary).login("qa638@mailinator.com", "test12");
 		new CreateNewTestPage(appLibrary).newTest(myTestName);
-		//new CreateNewTestPage(appLibrary).VerificationOfCreatedTest();
+		new DeleteTestPage(appLibrary).searchTest(myTestName);
 		new DeleteTestPage(appLibrary).searchTesttoDelete(myTestName);
 		
 	}

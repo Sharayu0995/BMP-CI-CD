@@ -3,15 +3,15 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.bmp.Regression.SearchandDeleteTest">
+      <class name="com.bmp.Regression.ShowAllReoprtsTest">
         <methods>
-          <include name="deletedTest"/>
+          <include name="setUp"/>
           <include name="checkAlerts"/>
           <include name="setUp"/>
-          <include name="setUp"/>
+          <include name="showAllReoprtsTest"/>
           <include name="quitBrowser"/>
         </methods>
-      </class> <!-- com.bmp.Regression.SearchandDeleteTest -->
+      </class> <!-- com.bmp.Regression.ShowAllReoprtsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
